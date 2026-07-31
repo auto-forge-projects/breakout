@@ -1,4 +1,6 @@
 // Saf çekirdek — tarayıcı API'si bilmez (docs/05-architecture.md).
+import { LEVEL, createGrid, hitBrick } from './bricks.js';
+
 export const PHASE = { SERVE: 'serve', PLAYING: 'playing', OVER: 'over', WON: 'won' };
 
 const WORLD = { w: 480, h: 640, wall: 8 };
@@ -44,12 +46,12 @@ export function createState() {
     score: 0,
     highScore: 0,
     bricksBroken: 0,
-    aliveCount: 0,
+    aliveCount: LEVEL.rows * LEVEL.cols,
     world: { ...WORLD },
     paddle,
     ball: { x: 0, y: 0, vx: 0, vy: 0, r: BALL_R },
-    grid: null,
-    bricks: [],
+    grid: { ...LEVEL },
+    bricks: createGrid(LEVEL),
     events: [],
   };
   resetBall(state);
@@ -133,6 +135,23 @@ function loseLife(state) {
   }
 }
 
+function tryBrickCollision(state) {
+  if (state.aliveCount <= 0) return;
+  const hit = hitBrick(state.bricks, state.grid, state.ball);
+  if (!hit) return;
+  if (hit.axis === 'x') state.ball.vx = -state.ball.vx;
+  else state.ball.vy = -state.ball.vy;
+  state.score += 10;
+  state.bricksBroken += 1;
+  state.aliveCount -= 1;
+  normalizeSpeed(state);
+  state.events.push('brick');
+  if (state.aliveCount === 0) {
+    state.phase = PHASE.WON;
+    state.events.push('won');
+  }
+}
+
 function substep(state, dt) {
   const { ball } = state;
   ball.x += ball.vx * dt;
@@ -140,20 +159,13 @@ function substep(state, dt) {
 
   reflectWalls(state);
 
-  if (!reflectPaddle(state) && state.aliveCount > 0) {
-    hitBrickIfAny(state);
+  if (!reflectPaddle(state)) {
+    tryBrickCollision(state);
   }
 
   if (ball.y - ball.r > state.world.h) {
     loseLife(state);
   }
-}
-
-// bricks.js henüz devrede değilse (TASK-001/002) no-op — TASK-003'te gerçek implementasyona bağlanır.
-let hitBrickIfAny = () => {};
-
-export function _setBrickHitHandler(fn) {
-  hitBrickIfAny = fn;
 }
 
 export function step(state, rawDt) {

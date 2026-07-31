@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "revision": 55,
+  "revision": 58,
   "project": "breakout",
   "workspace": "workspace/breakout",
   "profile": "LITE",
@@ -13,7 +13,7 @@
       "phase": 9,
       "task": "Development (TDD)",
       "started_at": "2026-07-31T14:03:00.000Z",
-      "last_update": "2026-07-31T14:04:50.205Z",
+      "last_update": "2026-07-31T14:06:18.053Z",
       "via": "inline"
     }
   ],
@@ -137,11 +137,11 @@
         },
         {
           "title": "TASK-003 bricks createGrid/hitBrick/can-kaybi/kazanma",
-          "status": "in_progress"
+          "status": "done"
         },
         {
           "title": "TASK-004 storage readHighScore/writeHighScore",
-          "status": "pending"
+          "status": "in_progress"
         },
         {
           "title": "TASK-005 game.js rAF+render retro piksel",
@@ -275,7 +275,7 @@
       }
     ]
   },
-  "updated_at": "2026-07-31T14:06:03.856Z",
+  "updated_at": "2026-07-31T14:06:18.053Z",
   "default_mode": "AUTOPILOT",
   "providers": {
     "selected": [
