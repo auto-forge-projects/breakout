@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "revision": 3,
+  "revision": 14,
   "project": "breakout",
   "workspace": "workspace/breakout",
   "profile": "LITE",
@@ -9,13 +9,19 @@
   "active_agents": [],
   "phases": {
     "0": {
-      "mode": "CHECKPOINT",
-      "status": "awaiting_approval",
-      "note": "0b yanıtlar uygulandı — brief onay bekliyor",
+      "mode": "AUTOPILOT",
+      "status": "done",
+      "note": "0b brief onaylandı + Faz 0 (Fikir/Intake) üretildi (orchestrator inline, business-analyst rolü)",
       "artifacts": [
-        "docs/00-refined-brief.md"
+        "docs/00-refined-brief.md",
+        "docs/00-refine-questions.json",
+        "docs/00-idea.md"
       ],
-      "decisions": []
+      "decisions": [
+        "DL-00-001"
+      ],
+      "gate_passed": true,
+      "completed_at": "2026-07-31T13:40:00.000Z"
     }
   },
   "feedback_loops": [],
@@ -25,11 +31,52 @@
       "event": "refine",
       "phase": 0,
       "detail": "0b rafine brief üretildi: breakout (blok kırma oyunu)"
+    },
+    {
+      "at": "2026-07-31T13:34:28.948Z",
+      "event": "mode_changed",
+      "detail": "AUTOPILOT (aktif+sonrası; fazlar: 0)"
+    },
+    {
+      "at": "2026-07-31T13:34:29.193Z",
+      "event": "profile_changed",
+      "detail": "LITE"
+    },
+    {
+      "at": "2026-07-31T13:35:31.925Z",
+      "event": "mode_changed",
+      "detail": "AUTOPILOT (aktif+sonrası; fazlar: 0)"
+    },
+    {
+      "at": "2026-07-31T13:35:32.141Z",
+      "event": "profile_changed",
+      "detail": "LITE"
     }
   ],
   "budget": {
     "model_calls": {},
     "notes": ""
   },
-  "updated_at": "2026-07-31T13:34:23.363Z"
+  "updated_at": "2026-07-31T13:39:21.933Z",
+  "default_mode": "AUTOPILOT",
+  "providers": {
+    "selected": [
+      "claude"
+    ],
+    "plan": {
+      "pool": [
+        "claude"
+      ],
+      "orchestrator": "claude",
+      "build": "claude",
+      "audit": "claude",
+      "cross_provider_audit": false,
+      "audit_phases": [
+        "7",
+        "10"
+      ],
+      "fallback_reason": null
+    },
+    "at": "2026-07-31T13:35:32.275Z"
+  }
 }
