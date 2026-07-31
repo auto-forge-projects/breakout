@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "revision": 19,
+  "revision": 23,
   "project": "breakout",
   "workspace": "workspace/breakout",
   "profile": "LITE",
-  "current_phase": 3,
+  "current_phase": 4,
   "status": "pending",
   "active_agents": [],
   "phases": {
@@ -22,6 +22,20 @@
       ],
       "gate_passed": true,
       "completed_at": "2026-07-31T13:40:00.000Z"
+    },
+    "3": {
+      "status": "done",
+      "mode": "AUTOPILOT",
+      "started_at": "2026-07-31T13:41:30.000Z",
+      "gate_passed": true,
+      "completed_at": "2026-07-31T13:44:30.000Z",
+      "artifacts": [
+        "docs/03-requirements.md"
+      ],
+      "decisions": [
+        "DL-03-001"
+      ],
+      "note": "Requirement Analizi tamamlandı — 6 FR, 4 NFR"
     },
     "1-2": {
       "status": "done",
@@ -78,10 +92,18 @@
         "model_recommended": "sonnet",
         "gate_passed": true,
         "at": "2026-07-31T13:44:00.000Z"
+      },
+      {
+        "phase": "3",
+        "duration_s": 180,
+        "model": null,
+        "model_recommended": "sonnet",
+        "gate_passed": true,
+        "at": "2026-07-31T13:44:30.000Z"
       }
     ]
   },
-  "updated_at": "2026-07-31T13:40:27.305Z",
+  "updated_at": "2026-07-31T13:41:27.534Z",
   "default_mode": "AUTOPILOT",
   "providers": {
     "selected": [
@@ -113,6 +135,11 @@
       "phase": "1-2",
       "at": "2026-07-31T13:40:27.304Z",
       "note": "GO karari verildi; 4 KPI: yukleme<=5sn, skor guncelleme<=1sn, oyun-bitti/kazandin ekrani<=1sn, ~60FPS. Faz 3 bu KPIlerden FR/NFR turetecek."
+    },
+    {
+      "phase": 3,
+      "at": "2026-07-31T13:41:27.534Z",
+      "note": "6 FR (paddle-kontrol/top-fizigi/can-sistemi/skor-kalicilik/zorluk-artisi/restart) + 4 NFR (60FPS, gecikme<=1sn, framework yok, localStorage kalicilik). Faz 4/5 canvas tabanli client-side mimari ustune kurulacak."
     }
   ]
 }
