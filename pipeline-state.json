@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "revision": 92,
+  "revision": 96,
   "project": "breakout",
   "workspace": "workspace/breakout",
   "profile": "LITE",
-  "current_phase": 13,
+  "current_phase": 14,
   "status": "pending",
   "active_agents": [],
   "phases": {
@@ -207,6 +207,20 @@
       ],
       "note": "CI/CD tamamlandı (inline devops-engineer rolü) — Dockerfile eklendi, docker build+container-ici health/index dogrulamasi basarili, scaffold CI/deploy workflow dokunulmadan kullanildi."
     },
+    "13": {
+      "mode": "AUTOPILOT",
+      "status": "done",
+      "started_at": "2026-07-31T14:35:30.000Z",
+      "gate_passed": true,
+      "completed_at": "2026-07-31T14:36:26.000Z",
+      "artifacts": [
+        "docs/13-release-notes.md"
+      ],
+      "decisions": [
+        "DL-13-001"
+      ],
+      "note": "Release tamamlandı (inline devops-engineer rolü) — v0.1.0, rollback planı tanımlı, JOIN kapısı (Faz10 LITE atlanır) doğrulandı."
+    },
     "1-2": {
       "status": "done",
       "mode": "AUTOPILOT",
@@ -339,10 +353,18 @@
         "model_recommended": "sonnet",
         "gate_passed": true,
         "at": "2026-07-31T14:35:14.000Z"
+      },
+      {
+        "phase": "13",
+        "duration_s": 56,
+        "model": null,
+        "model_recommended": "haiku",
+        "gate_passed": true,
+        "at": "2026-07-31T14:36:26.000Z"
       }
     ]
   },
-  "updated_at": "2026-07-31T14:35:14.791Z",
+  "updated_at": "2026-07-31T14:36:26.499Z",
   "default_mode": "AUTOPILOT",
   "providers": {
     "selected": [
@@ -414,6 +436,11 @@
       "phase": 11,
       "at": "2026-07-31T14:33:18.606Z",
       "note": "54/54 test yesil, coverage %97.15, FR-1..6+NFR-2/4+SEC izlenebilirligi tam. Faz 12 CI/CD bu testleri workflow icinde kosturacak."
+    },
+    {
+      "phase": 12,
+      "at": "2026-07-31T14:35:17.491Z",
+      "note": "Dockerfile eklendi (node:22-alpine, src+public COPY, CMD server.js), build+container-ici health/index dogrulandi. deploy.json zaten enabled:true, host_port:5008. Faz 13 Release bunun uzerine kurulacak."
     }
   ],
   "product": {
