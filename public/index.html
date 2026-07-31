@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Breakout</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Breakout</h1>
+  <div id="hud">
+    <span id="score">SKOR: 0</span>
+    <span id="highscore">EN YÜKSEK: 0</span>
+    <span id="lives">CAN: 3</span>
+  </div>
+  <div id="stage">
+    <canvas id="game" width="480" height="640"></canvas>
+    <div id="overlay" hidden>
+      <p id="overlay-message"></p>
+      <button id="restart" type="button">Yeniden Başlat</button>
+    </div>
+  </div>
+  <p class="hint">Fare ile veya ← → tuşlarıyla paddle'ı hareket ettir. Tıkla / Space ile topu fırlat.</p>
+  <noscript>Bu oyun JavaScript gerektirir.</noscript>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
