@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "revision": 109,
+  "revision": 110,
   "project": "breakout",
   "workspace": "workspace/breakout",
   "profile": "LITE",
@@ -430,7 +430,7 @@
       }
     ]
   },
-  "updated_at": "2026-07-31T14:41:09.134Z",
+  "updated_at": "2026-07-31T14:41:11.880Z",
   "default_mode": "AUTOPILOT",
   "providers": {
     "selected": [
