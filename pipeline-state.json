@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "revision": 101,
+  "revision": 105,
   "project": "breakout",
   "workspace": "workspace/breakout",
   "profile": "LITE",
-  "current_phase": 15,
+  "current_phase": 16,
   "status": "pending",
   "active_agents": [],
   "phases": {
@@ -235,6 +235,20 @@
       ],
       "note": "Monitoring tamamlandı (inline devops-engineer rolü) — health check + container log, alerting altyapısı LITE kapsamı dışı (DL-14-001)."
     },
+    "15": {
+      "mode": "AUTOPILOT",
+      "status": "done",
+      "started_at": "2026-07-31T14:38:11.000Z",
+      "gate_passed": true,
+      "completed_at": "2026-07-31T14:38:52.000Z",
+      "artifacts": [
+        "docs/15-maintenance.md"
+      ],
+      "decisions": [
+        "DL-15-001"
+      ],
+      "note": "Bakım tamamlandı — TD-1..TD-6 (0 P1, 1 P2, 5 P3), npm audit referanslı."
+    },
     "1-2": {
       "status": "done",
       "mode": "AUTOPILOT",
@@ -383,10 +397,18 @@
         "model_recommended": "sonnet",
         "gate_passed": true,
         "at": "2026-07-31T14:37:15.000Z"
+      },
+      {
+        "phase": "15",
+        "duration_s": 41,
+        "model": null,
+        "model_recommended": "haiku",
+        "gate_passed": true,
+        "at": "2026-07-31T14:38:52.000Z"
       }
     ]
   },
-  "updated_at": "2026-07-31T14:37:15.798Z",
+  "updated_at": "2026-07-31T14:38:52.673Z",
   "default_mode": "AUTOPILOT",
   "providers": {
     "selected": [
@@ -468,6 +490,11 @@
       "phase": 13,
       "at": "2026-07-31T14:36:29.112Z",
       "note": "v0.1.0 release notlari + rollback plani (SHA-etiketli imaj yeniden calistirma, sunucu durumsuz). Faz 14 monitoring bunun uzerine health/log tanimlari kuracak."
+    },
+    {
+      "phase": 14,
+      "at": "2026-07-31T14:37:18.959Z",
+      "note": "Izleme: /health + docker logs, alerting yok (LITE, tek risk = kullanilabilirlik). Faz 15 bakim borcuna otomatik uptime-check onerisi dusulecek."
     }
   ],
   "product": {
