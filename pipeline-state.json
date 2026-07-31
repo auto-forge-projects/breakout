@@ -1,12 +1,21 @@
 {
   "schema_version": 2,
-  "revision": 31,
+  "revision": 36,
   "project": "breakout",
   "workspace": "workspace/breakout",
   "profile": "LITE",
-  "current_phase": 6,
+  "current_phase": 7,
   "status": "pending",
-  "active_agents": [],
+  "active_agents": [
+    {
+      "agent": "security-reviewer",
+      "model": "opus",
+      "phase": 7,
+      "task": "Güvenlik Tasarımı",
+      "started_at": "2026-07-31T13:53:20.000Z",
+      "last_update": "2026-07-31T13:53:20.000Z"
+    }
+  ],
   "phases": {
     "0": {
       "mode": "AUTOPILOT",
@@ -68,6 +77,25 @@
         "DL-05-003"
       ],
       "note": "Mimari tasarım tamamlandı (architect subagent) — physics.js/bricks.js/game.js/storage.js/server.js modül yapısı"
+    },
+    "6": {
+      "status": "done",
+      "mode": "AUTOPILOT",
+      "gate_passed": true,
+      "started_at": "2026-07-31T13:47:10.000Z",
+      "completed_at": "2026-07-31T13:53:00.000Z",
+      "artifacts": [
+        "docs/06-uiux/06-uiux.md"
+      ],
+      "decisions": [
+        "DL-06-001"
+      ],
+      "note": "UI/UX (developer rolü, inline) — retro piksel canvas + HUD + overlay, tek-nokta paddle girdisi"
+    },
+    "7": {
+      "status": "running",
+      "mode": "AUTOPILOT",
+      "started_at": "2026-07-31T13:53:20.000Z"
     },
     "1-2": {
       "status": "done",
@@ -148,10 +176,18 @@
         "model_recommended": "opus",
         "gate_passed": true,
         "at": "2026-07-31T13:52:00.000Z"
+      },
+      {
+        "phase": "6",
+        "duration_s": 350,
+        "model": null,
+        "model_recommended": "sonnet",
+        "gate_passed": true,
+        "at": "2026-07-31T13:53:00.000Z"
       }
     ]
   },
-  "updated_at": "2026-07-31T13:51:43.040Z",
+  "updated_at": "2026-07-31T13:53:02.127Z",
   "default_mode": "AUTOPILOT",
   "providers": {
     "selected": [
@@ -198,6 +234,15 @@
       "phase": 5,
       "at": "2026-07-31T13:51:43.040Z",
       "note": "Mimari: physics.js+bricks.js (saf) / game.js (adaptor,rAF) / storage.js / server.js (Express). Parametreler: dunya 480x640, paddle 64x12 hiz420px/s, top 8x8 hiz260-440px/s (+%8/5blok), 10x4=40 blok, 3 can, sub-step tunelleme onlemi, localStorage highscore. Faz 6 bu yapiya UI/UX kuracak."
+    },
+    {
+      "phase": 6,
+      "at": "2026-07-31T13:52:57.250Z",
+      "note": "UI: canvas#game 480x640 + HUD(skor/en-yuksek/can) + overlay(kazandin/oyun-bitti). Tum paddle girdisi (fare+klavye) tek setPaddleX/movePaddle a gider. Urun tipi web."
     }
-  ]
+  ],
+  "product": {
+    "name": "breakout",
+    "type": "web"
+  }
 }
