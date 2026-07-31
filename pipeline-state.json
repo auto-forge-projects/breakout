@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "revision": 87,
+  "revision": 92,
   "project": "breakout",
   "workspace": "workspace/breakout",
   "profile": "LITE",
-  "current_phase": 12,
+  "current_phase": 13,
   "status": "pending",
   "active_agents": [],
   "phases": {
@@ -190,6 +190,23 @@
       ],
       "note": "Test tamamlandı (inline test-engineer rolü) — Faz 9 birim/entegrasyon testleri FR/NFR/SEC izlenebilirliğiyle Faz 11 kapsamına alındı, 54/54 test yeşil, coverage %97.15, mechanical kapı geçti."
     },
+    "12": {
+      "mode": "AUTOPILOT",
+      "status": "done",
+      "started_at": "2026-07-31T14:33:55.000Z",
+      "gate_passed": true,
+      "completed_at": "2026-07-31T14:35:14.000Z",
+      "artifacts": [
+        "Dockerfile",
+        "docs/12-cicd.md",
+        ".github/workflows/ci.yml",
+        ".github/workflows/deploy-image.yml"
+      ],
+      "decisions": [
+        "DL-12-001"
+      ],
+      "note": "CI/CD tamamlandı (inline devops-engineer rolü) — Dockerfile eklendi, docker build+container-ici health/index dogrulamasi basarili, scaffold CI/deploy workflow dokunulmadan kullanildi."
+    },
     "1-2": {
       "status": "done",
       "mode": "AUTOPILOT",
@@ -314,10 +331,18 @@
         "model_recommended": "sonnet",
         "gate_passed": true,
         "at": "2026-07-31T14:33:10.000Z"
+      },
+      {
+        "phase": "12",
+        "duration_s": 79,
+        "model": null,
+        "model_recommended": "sonnet",
+        "gate_passed": true,
+        "at": "2026-07-31T14:35:14.000Z"
       }
     ]
   },
-  "updated_at": "2026-07-31T14:33:10.480Z",
+  "updated_at": "2026-07-31T14:35:14.791Z",
   "default_mode": "AUTOPILOT",
   "providers": {
     "selected": [
@@ -384,10 +409,23 @@
       "phase": 9,
       "at": "2026-07-31T14:13:42.479Z",
       "note": "Kod tamam: public/physics.js+bricks.js (saf) + public/game.js (adaptor) + public/storage.js + src/server.js (Express). TDD commit ciftleri, 54/54 test yesil, coverage %97.15. verify-gate 9 --level all gecti."
+    },
+    {
+      "phase": 11,
+      "at": "2026-07-31T14:33:18.606Z",
+      "note": "54/54 test yesil, coverage %97.15, FR-1..6+NFR-2/4+SEC izlenebilirligi tam. Faz 12 CI/CD bu testleri workflow icinde kosturacak."
     }
   ],
   "product": {
     "name": "breakout",
-    "type": "web"
+    "type": "web",
+    "version": "0.1.0",
+    "auto_run": false,
+    "commands": {
+      "build": "docker build -t breakout .",
+      "test": "npm test",
+      "run": "docker run -p 3000:3000 breakout"
+    },
+    "links": []
   }
 }
