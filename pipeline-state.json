@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "revision": 14,
+  "revision": 19,
   "project": "breakout",
   "workspace": "workspace/breakout",
   "profile": "LITE",
-  "current_phase": 0,
+  "current_phase": 3,
   "status": "pending",
   "active_agents": [],
   "phases": {
@@ -22,6 +22,20 @@
       ],
       "gate_passed": true,
       "completed_at": "2026-07-31T13:40:00.000Z"
+    },
+    "1-2": {
+      "status": "done",
+      "mode": "AUTOPILOT",
+      "started_at": "2026-07-31T13:41:00.000Z",
+      "gate_passed": true,
+      "completed_at": "2026-07-31T13:44:00.000Z",
+      "artifacts": [
+        "docs/01-02-value-feasibility.md"
+      ],
+      "decisions": [
+        "DL-01-001"
+      ],
+      "note": "Değer & Fizibilite (LITE birleşik) — GO kararı"
     }
   },
   "feedback_loops": [],
@@ -55,9 +69,19 @@
   ],
   "budget": {
     "model_calls": {},
-    "notes": ""
+    "notes": "",
+    "telemetry": [
+      {
+        "phase": "1-2",
+        "duration_s": 180,
+        "model": null,
+        "model_recommended": "sonnet",
+        "gate_passed": true,
+        "at": "2026-07-31T13:44:00.000Z"
+      }
+    ]
   },
-  "updated_at": "2026-07-31T13:39:21.933Z",
+  "updated_at": "2026-07-31T13:40:27.305Z",
   "default_mode": "AUTOPILOT",
   "providers": {
     "selected": [
@@ -78,5 +102,17 @@
       "fallback_reason": null
     },
     "at": "2026-07-31T13:35:32.275Z"
-  }
+  },
+  "checkpoints": [
+    {
+      "phase": 0,
+      "at": "2026-07-31T13:39:40.906Z",
+      "note": "Breakout: paddle fare+klavye kontrol, 3 can, blok kırma, artan top hızı, retro piksel, LITE profil, client-side statik."
+    },
+    {
+      "phase": "1-2",
+      "at": "2026-07-31T13:40:27.304Z",
+      "note": "GO karari verildi; 4 KPI: yukleme<=5sn, skor guncelleme<=1sn, oyun-bitti/kazandin ekrani<=1sn, ~60FPS. Faz 3 bu KPIlerden FR/NFR turetecek."
+    }
+  ]
 }
