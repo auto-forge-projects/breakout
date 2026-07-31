@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "revision": 39,
+  "revision": 43,
   "project": "breakout",
   "workspace": "workspace/breakout",
   "profile": "LITE",
-  "current_phase": 8,
+  "current_phase": 9,
   "status": "pending",
   "active_agents": [],
   "phases": {
@@ -97,6 +97,20 @@
         "DL-07-002"
       ],
       "note": "Güvenlik değerlendirmesi tamamlandı (security-reviewer subagent) — OWASP 10/10, SEC-1..17 Faz 9a devredildi"
+    },
+    "8": {
+      "status": "done",
+      "mode": "AUTOPILOT",
+      "started_at": "2026-07-31T13:58:50.000Z",
+      "gate_passed": true,
+      "completed_at": "2026-07-31T14:02:00.000Z",
+      "artifacts": [
+        "docs/08-plan.md"
+      ],
+      "decisions": [
+        "DL-08-001"
+      ],
+      "note": "Planlama tamamlandı (business-analyst rolü, inline) — 10 task, TDD sıralı"
     },
     "1-2": {
       "status": "done",
@@ -193,10 +207,18 @@
         "model_recommended": "opus",
         "gate_passed": true,
         "at": "2026-07-31T14:00:00.000Z"
+      },
+      {
+        "phase": "8",
+        "duration_s": 190,
+        "model": null,
+        "model_recommended": "sonnet",
+        "gate_passed": true,
+        "at": "2026-07-31T14:02:00.000Z"
       }
     ]
   },
-  "updated_at": "2026-07-31T13:58:36.509Z",
+  "updated_at": "2026-07-31T13:59:30.708Z",
   "default_mode": "AUTOPILOT",
   "providers": {
     "selected": [
@@ -253,6 +275,11 @@
       "phase": 7,
       "at": "2026-07-31T13:58:36.508Z",
       "note": "Guvenlik: OWASP 10/10 (5 uygulanabilir/4 kismen/2 N-A), STRIDE. SEC-1..17 Faz 9a: CSP/header, static sertlestirme, localStorage guvenli okuma+clamp(0..400), innerHTML/eval yasagi, substep DoS onlemi, pinned bagimliliklar. Kritik risk kabulu yok."
+    },
+    {
+      "phase": 8,
+      "at": "2026-07-31T13:59:30.707Z",
+      "note": "Plan: TASK-001..010, TDD sirali (physics.js cekirdek once, sonra bricks/storage/game/server/statik-yuzey/entegrasyon). Faz 9 bu backlogu takip edecek, her task test+impl commit ciftiyle."
     }
   ],
   "product": {
