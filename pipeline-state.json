@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "revision": 48,
+  "revision": 52,
   "project": "breakout",
   "workspace": "workspace/breakout",
   "profile": "LITE",
@@ -13,7 +13,7 @@
       "phase": 9,
       "task": "Development (TDD)",
       "started_at": "2026-07-31T14:03:00.000Z",
-      "last_update": "2026-07-31T14:02:51.172Z",
+      "last_update": "2026-07-31T14:04:36.660Z",
       "via": "inline"
     }
   ],
@@ -133,11 +133,11 @@
         },
         {
           "title": "TASK-002 physics step/duvar-paddle sekmesi/alt-adim",
-          "status": "in_progress"
+          "status": "done"
         },
         {
           "title": "TASK-003 bricks createGrid/hitBrick/can-kaybi/kazanma",
-          "status": "pending"
+          "status": "in_progress"
         },
         {
           "title": "TASK-004 storage readHighScore/writeHighScore",
@@ -275,7 +275,7 @@
       }
     ]
   },
-  "updated_at": "2026-07-31T14:03:00.342Z",
+  "updated_at": "2026-07-31T14:04:36.660Z",
   "default_mode": "AUTOPILOT",
   "providers": {
     "selected": [
