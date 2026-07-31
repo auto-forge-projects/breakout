@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-07-31T00:00:00.000Z",
+  "round": 1,
+  "status": "applied",
+  "questions": [
+    {
+      "id": "Q1",
+      "question": "Paddle nasıl kontrol edilsin?",
+      "why": "Kontrol şeması UI/UX ve girdi işleme mimarisini doğrudan belirler.",
+      "criticality": "critical",
+      "suggested_options": [
+        "Yalnız fare hareketi",
+        "Yalnız klavye (sol/sağ ok)",
+        "Her ikisi de desteklensin"
+      ],
+      "answer": "Her ikisi de desteklensin",
+      "answered_at": "2026-07-31T13:32:49.752Z"
+    },
+    {
+      "id": "Q2",
+      "question": "Can (life) sistemi olsun mu?",
+      "why": "Oyun bitiş koşulunu ve zorluk hissini belirler.",
+      "criticality": "critical",
+      "suggested_options": [
+        "Evet, 3 can",
+        "Evet, farklı bir can sayısı (ör. 5)",
+        "Hayır, top bir kez kaçınca oyun biter"
+      ],
+      "answer": "Evet, 3 can",
+      "answered_at": "2026-07-31T13:33:08.184Z"
+    },
+    {
+      "id": "Q3",
+      "question": "Görsel stil tercihi nedir?",
+      "why": "Faz 6 (UI/UX) prototipinin görsel yönünü hızlandırır.",
+      "criticality": "optional",
+      "suggested_options": [
+        "Minimal/düz renkler",
+        "Retro piksel",
+        "Serbest bırak (geliştirici seçsin)"
+      ],
+      "answer": "Retro piksel",
+      "answered_at": "2026-07-31T13:33:15.519Z"
+    },
+    {
+      "id": "Q4",
+      "question": "Zorluk artışı olsun mu (top hızı zamanla artsın mı)?",
+      "why": "Oyun döngüsü tasarımını ve denge ayarlarını etkiler.",
+      "criticality": "optional",
+      "suggested_options": [
+        "Evet, top zamanla hızlansın",
+        "Hayır, sabit hız",
+        "Serbest bırak (geliştirici seçsin)"
+      ],
+      "answer": "Evet, top zamanla hızlansın",
+      "answered_at": "2026-07-31T13:33:25.751Z"
+    }
+  ],
+  "answered_at": "2026-07-31T13:33:25.751Z",
+  "applied_at": "2026-07-31T13:34:16.000Z"
+}

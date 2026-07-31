@@ -1,20 +1,35 @@
 {
   "schema_version": 2,
-  "revision": 0,
+  "revision": 3,
   "project": "breakout",
   "workspace": "workspace/breakout",
-  "repo_mode": "per-repo",
   "profile": "LITE",
-  "current_phase": null,
+  "current_phase": 0,
   "status": "pending",
   "active_agents": [],
-  "phases": {},
+  "phases": {
+    "0": {
+      "mode": "CHECKPOINT",
+      "status": "awaiting_approval",
+      "note": "0b yanıtlar uygulandı — brief onay bekliyor",
+      "artifacts": [
+        "docs/00-refined-brief.md"
+      ],
+      "decisions": []
+    }
+  },
   "feedback_loops": [],
   "pending_human_review": [],
-  "history": [],
+  "history": [
+    {
+      "event": "refine",
+      "phase": 0,
+      "detail": "0b rafine brief üretildi: breakout (blok kırma oyunu)"
+    }
+  ],
   "budget": {
     "model_calls": {},
     "notes": ""
   },
-  "updated_at": null
+  "updated_at": "2026-07-31T13:34:23.363Z"
 }
