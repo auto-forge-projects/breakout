@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "revision": 62,
+  "revision": 66,
   "project": "breakout",
   "workspace": "workspace/breakout",
   "profile": "LITE",
@@ -13,7 +13,7 @@
       "phase": 9,
       "task": "Development (TDD)",
       "started_at": "2026-07-31T14:03:00.000Z",
-      "last_update": "2026-07-31T14:06:56.665Z",
+      "last_update": "2026-07-31T14:09:49.534Z",
       "via": "inline"
     }
   ],
@@ -145,19 +145,19 @@
         },
         {
           "title": "TASK-005 game.js rAF+render retro piksel",
-          "status": "in_progress"
+          "status": "done"
         },
         {
           "title": "TASK-006 game.js fare+klavye girdisi",
-          "status": "pending"
+          "status": "done"
         },
         {
           "title": "TASK-007 game.js HUD+overlay+restart",
-          "status": "pending"
+          "status": "done"
         },
         {
           "title": "TASK-008 server.js Express+/health+guvenlik",
-          "status": "pending"
+          "status": "in_progress"
         },
         {
           "title": "TASK-009 index.html+style.css statik yuzey",
@@ -275,7 +275,7 @@
       }
     ]
   },
-  "updated_at": "2026-07-31T14:06:56.665Z",
+  "updated_at": "2026-07-31T14:09:49.534Z",
   "default_mode": "AUTOPILOT",
   "providers": {
     "selected": [
