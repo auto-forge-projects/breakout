@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "revision": 27,
+  "revision": 31,
   "project": "breakout",
   "workspace": "workspace/breakout",
   "profile": "LITE",
-  "current_phase": 5,
+  "current_phase": 6,
   "status": "pending",
   "active_agents": [],
   "phases": {
@@ -52,6 +52,22 @@
         "DL-04-003"
       ],
       "note": "Çözüm Analizi tamamlandı (architect subagent) — Vanilla Canvas 2D + grid/AABB + Express seçildi"
+    },
+    "5": {
+      "status": "done",
+      "mode": "AUTOPILOT",
+      "started_at": "2026-07-31T13:45:40.000Z",
+      "gate_passed": true,
+      "completed_at": "2026-07-31T13:52:00.000Z",
+      "artifacts": [
+        "docs/05-architecture.md"
+      ],
+      "decisions": [
+        "DL-05-001",
+        "DL-05-002",
+        "DL-05-003"
+      ],
+      "note": "Mimari tasarım tamamlandı (architect subagent) — physics.js/bricks.js/game.js/storage.js/server.js modül yapısı"
     },
     "1-2": {
       "status": "done",
@@ -124,10 +140,18 @@
         "model_recommended": "opus",
         "gate_passed": true,
         "at": "2026-07-31T13:47:00.000Z"
+      },
+      {
+        "phase": "5",
+        "duration_s": 380,
+        "model": null,
+        "model_recommended": "opus",
+        "gate_passed": true,
+        "at": "2026-07-31T13:52:00.000Z"
       }
     ]
   },
-  "updated_at": "2026-07-31T13:45:24.637Z",
+  "updated_at": "2026-07-31T13:51:43.040Z",
   "default_mode": "AUTOPILOT",
   "providers": {
     "selected": [
@@ -169,6 +193,11 @@
       "phase": 4,
       "at": "2026-07-31T13:45:24.636Z",
       "note": "Cozum: Vanilla Canvas 2D + rAF (client), grid+AABB+sub-step hareket (tunelleme onlemi), Node/Express minimal statik sunucu+/health. Faz 5 bu ucu ustune mimari kuracak."
+    },
+    {
+      "phase": 5,
+      "at": "2026-07-31T13:51:43.040Z",
+      "note": "Mimari: physics.js+bricks.js (saf) / game.js (adaptor,rAF) / storage.js / server.js (Express). Parametreler: dunya 480x640, paddle 64x12 hiz420px/s, top 8x8 hiz260-440px/s (+%8/5blok), 10x4=40 blok, 3 can, sub-step tunelleme onlemi, localStorage highscore. Faz 6 bu yapiya UI/UX kuracak."
     }
   ]
 }
