@@ -1,21 +1,12 @@
 {
   "schema_version": 2,
-  "revision": 36,
+  "revision": 39,
   "project": "breakout",
   "workspace": "workspace/breakout",
   "profile": "LITE",
-  "current_phase": 7,
+  "current_phase": 8,
   "status": "pending",
-  "active_agents": [
-    {
-      "agent": "security-reviewer",
-      "model": "opus",
-      "phase": 7,
-      "task": "Güvenlik Tasarımı",
-      "started_at": "2026-07-31T13:53:20.000Z",
-      "last_update": "2026-07-31T13:53:20.000Z"
-    }
-  ],
+  "active_agents": [],
   "phases": {
     "0": {
       "mode": "AUTOPILOT",
@@ -93,9 +84,19 @@
       "note": "UI/UX (developer rolü, inline) — retro piksel canvas + HUD + overlay, tek-nokta paddle girdisi"
     },
     "7": {
-      "status": "running",
+      "status": "done",
       "mode": "AUTOPILOT",
-      "started_at": "2026-07-31T13:53:20.000Z"
+      "started_at": "2026-07-31T13:53:20.000Z",
+      "gate_passed": true,
+      "completed_at": "2026-07-31T14:00:00.000Z",
+      "artifacts": [
+        "docs/07-security.md"
+      ],
+      "decisions": [
+        "DL-07-001",
+        "DL-07-002"
+      ],
+      "note": "Güvenlik değerlendirmesi tamamlandı (security-reviewer subagent) — OWASP 10/10, SEC-1..17 Faz 9a devredildi"
     },
     "1-2": {
       "status": "done",
@@ -184,10 +185,18 @@
         "model_recommended": "sonnet",
         "gate_passed": true,
         "at": "2026-07-31T13:53:00.000Z"
+      },
+      {
+        "phase": "7",
+        "duration_s": 400,
+        "model": null,
+        "model_recommended": "opus",
+        "gate_passed": true,
+        "at": "2026-07-31T14:00:00.000Z"
       }
     ]
   },
-  "updated_at": "2026-07-31T13:53:02.127Z",
+  "updated_at": "2026-07-31T13:58:36.509Z",
   "default_mode": "AUTOPILOT",
   "providers": {
     "selected": [
@@ -239,6 +248,11 @@
       "phase": 6,
       "at": "2026-07-31T13:52:57.250Z",
       "note": "UI: canvas#game 480x640 + HUD(skor/en-yuksek/can) + overlay(kazandin/oyun-bitti). Tum paddle girdisi (fare+klavye) tek setPaddleX/movePaddle a gider. Urun tipi web."
+    },
+    {
+      "phase": 7,
+      "at": "2026-07-31T13:58:36.508Z",
+      "note": "Guvenlik: OWASP 10/10 (5 uygulanabilir/4 kismen/2 N-A), STRIDE. SEC-1..17 Faz 9a: CSP/header, static sertlestirme, localStorage guvenli okuma+clamp(0..400), innerHTML/eval yasagi, substep DoS onlemi, pinned bagimliliklar. Kritik risk kabulu yok."
     }
   ],
   "product": {
