@@ -1,12 +1,21 @@
 {
   "schema_version": 2,
-  "revision": 80,
+  "revision": 82,
   "project": "breakout",
   "workspace": "workspace/breakout",
   "profile": "LITE",
   "current_phase": 10,
   "status": "pending",
-  "active_agents": [],
+  "active_agents": [
+    {
+      "agent": "code-reviewer",
+      "model": "opus",
+      "phase": 10,
+      "task": "Code Review (blind)",
+      "started_at": "2026-07-31T14:15:00.000Z",
+      "last_update": "2026-07-31T14:15:00.000Z"
+    }
+  ],
   "phases": {
     "0": {
       "mode": "AUTOPILOT",
@@ -175,6 +184,11 @@
       ],
       "note": "Development tamamlandı (inline developer rolü) — TDD TASK-001..010, 54 test yeşil, coverage %97.15"
     },
+    "10": {
+      "status": "running",
+      "mode": "AUTOPILOT",
+      "started_at": "2026-07-31T14:15:00.000Z"
+    },
     "1-2": {
       "status": "done",
       "mode": "AUTOPILOT",
@@ -289,7 +303,7 @@
       }
     ]
   },
-  "updated_at": "2026-07-31T14:13:50.111Z",
+  "updated_at": "2026-07-31T14:14:22.787Z",
   "default_mode": "AUTOPILOT",
   "providers": {
     "selected": [
